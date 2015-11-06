@@ -1,0 +1,49 @@
+// A GEOChallage Challange Object
+{
+    "title": "Schitzeljagd I",
+    "challangeId": "schinteljagd_1",
+    "startLocationDescription": "Königsstraße",
+    "startDate": "2015-11-06T20:29:12.485Z",
+    "approxDuration": "5h",
+    "minParticipants": 5,
+    "finishedBy": "12345",
+    "participants": [
+        "12345",
+        "123456"
+    ],
+    "quests": [
+        {
+            "question": "Nenne das Geburtsjahr von Jasper!",
+            "answer": "1799",
+            "lon": 9.202949,
+            "lat": 48.789188
+        },
+        {
+            "question": "Wieviel Steine liegen hier rum?",
+            "answer": "5",
+            "lon": 9.206875,
+            "lat": 48.790560
+        },
+        {
+            "question": "Was war der Vogel des Jahres 2015?",
+            "answer": "Habicht",
+            "lon": 9.210244,
+            "lat": 48.789832
+        }
+    ]
+}
+
+// Ping Object
+{
+    "challangeId": "schinteljagd_1",
+    "userId": "12345",
+    "lon": 9.202949,
+    "lat": 48.789188,
+    "timestamp": "2015-11-06T20:29:12.485Z",
+    "nextQuestIndex": 1
+}
+
+
+
+
+currentTrack.steps[i]
