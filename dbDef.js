@@ -34,7 +34,8 @@ var Db = require('mongoose'),
 
 var Challenge = Db.model('Challenge', challenge);
 
-Db.connect('mongodb://' + Config.dbUser + ':' + Config.dbPassword + '@' + Config.dbHost + ':' + Config.dbPort + '/' + Config.dbUrl + '/' + Config.dbName, function(err) {
+//Db.connect('mongodb://' + Config.dbUser + ':' + Config.dbPassword + '@' + Config.dbHost + ':' + Config.dbPort + '/' + Config.dbUrl + '/' + Config.dbName, function(err) {
+Db.connect('mongodb://' + PROD_MONGODB, function(err) {
     if (err) Log.error("Database connection failed", err);
 });
 
