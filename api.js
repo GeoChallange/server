@@ -4,6 +4,7 @@ var dbDef = require('./dbDef.js'),
     Log = require('./Log.js'),
     Config = require('./config.json'),
     app = express(),
+    TestData = require('./testdata.json');
     http = require('http').createServer(app);
 
 
@@ -22,7 +23,9 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 app.use(allowCrossDomain);
-
+var testdata = new  dbDef.Challenge(TestData);
+testdata.save();
+console.log(TestData);
 /**
  * get information for the challenges
  */
@@ -56,9 +59,10 @@ app.get('/challenge', function (req, res) {
 app.get('/challenge/:id', function (req, res) {
     dbDef.Challenge.findOne({challengeId: req.params.id}).select({
         _id: 0,
-        __v: 0
+        __v: 0,
+        pingHistory: 0
     }).exec(function (err, challenge) {
-        if (err || challenge != 'Object'){
+        if (err){
             Log.debug("Find challengeId error");
             return res.status(404).send({error: "Find challengeId error"});
         }
