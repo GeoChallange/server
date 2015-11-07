@@ -4,10 +4,10 @@ var dbDef = require('./dbDef.js'),
     Log = require('./Log.js'),
     Config = require('./config.json'),
     app = express(),
-    http = require('http').createServer(app);
+    https = require('https').createServer(app);
 
 //app.set('port', (process.env.PORT || 5000));
-http.listen(Config.apiPort , function () {
+https.listen(Config.apiPort , function () {
     Log.info("GeoChallenger Server runs on port: " + Config.apiPort)
 });
 
