@@ -1,6 +1,0 @@
-{
-    "debug": true,
-    "apiPort": 8080,
-    "dbHost": "0.0.0.0",
-    "dbPort": ""
-}

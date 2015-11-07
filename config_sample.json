@@ -1,0 +1,6 @@
+{
+    "debug": true,
+    "apiPort": 8080,
+    "dbPort": "",
+    "dbHost:": "localhost"
+}
