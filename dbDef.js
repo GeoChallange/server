@@ -35,7 +35,7 @@ var Db = require('mongoose'),
 var Challenge = Db.model('Challenge', challenge);
 
 //Db.connect('mongodb://' + Config.dbUser + ':' + Config.dbPassword + '@' + Config.dbHost + ':' + Config.dbPort + '/' + Config.dbUrl + '/' + Config.dbName, function(err) {
-Db.connect('mongodb://heroku_sjmnzln1:cm7efflp32s94tgpb88fcl0fpq@ds053728.mongolab.com:53728/heroku_sjmnzln1/geochallenge', function(err) {
+Db.connect(process.env.MONGOLAB_URI, function(err) {
     if (err) Log.error("Database connection failed", err);
 });
 
