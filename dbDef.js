@@ -28,11 +28,6 @@ var Db = require('mongoose'),
             timestamp: Date,
             nextQuestIndex: Number
         }
-    ],
-    userIds: [
-        {
-            userId: String
-        }
     ]
 });
 

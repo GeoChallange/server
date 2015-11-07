@@ -7,22 +7,6 @@ var dbDef = require('./dbDef.js'),
     http = require('http').createServer(app);
 
 
-var testdaten = new dbDef.Challenge({
-        title: "Schitzeljagd I",
-        challengeId: "schinteljagd_1",
-        startLocationDescription: "Königsstraße",
-        startDate: "2015-11-06T20:29:12.485Z",
-        approxDuration: "5h",
-        minParticipants: 5,
-        finishedBy: "12345",
-        participants: [
-            "12345",
-            "123456"
-        ]
-    }
-);
-//testdaten.save();
-
 
 http.listen(Config.apiPort, function () {
     Log.info("GeoChallenger Server runs on port: " + Config.apiPort)
