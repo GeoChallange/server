@@ -4,7 +4,6 @@ var dbDef = require('./dbDef.js'),
     Log = require('./Log.js'),
     Config = require('./config.json'),
     app = express(),
-    TestData = require('./testdata.json');
     http = require('http').createServer(app);
 
 
@@ -23,13 +22,43 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 app.use(allowCrossDomain);
-var testdata = new  dbDef.Challenge(TestData);
-testdata.save();
-console.log(TestData);
+
 /**
- * get information for the challenges
+ * get information for all active challenges
  */
 app.get('/challenge', function (req, res) {
+    dbDef.Challenge.aggregate([
+        {
+            $match: {
+                "finishedBy": null
+            }
+        }, {
+            $project: {
+                title: 1,
+                price: 1,
+                challengeId: 1,
+                startLocationDescription: 1,
+                startDate: 1,
+                approxDuration: 1,
+                minParticipants: 1,
+                finishedBy: 1,
+                numberOfQuests: {$size: "$quests"},
+                numberOfParticipants: {$size: "$participants"},
+                _id: 0
+            }
+        }], function (err, challenges) {
+        if (err || challenges == null) {
+            Log.debug("can't get challenges", err);
+            return res.status(404).send({error: "can't get challenges"});
+        }
+        return res.status(200).send(challenges);
+    });
+});
+
+/**
+ * get information for all challenges
+ */
+app.get('/challenge/all', function (req, res) {
     dbDef.Challenge.aggregate([{
         $project: {
             title: 1,
@@ -45,7 +74,7 @@ app.get('/challenge', function (req, res) {
             _id: 0
         }
     }], function (err, challenges) {
-        if (err || challenges == null){
+        if (err || challenges == null) {
             Log.debug("can't get challenges", err);
             return res.status(404).send({error: "can't get challenges"});
         }
@@ -62,7 +91,7 @@ app.get('/challenge/:id', function (req, res) {
         __v: 0,
         pingHistory: 0
     }).exec(function (err, challenge) {
-        if (err){
+        if (err) {
             Log.debug("Find challengeId error");
             return res.status(404).send({error: "Find challengeId error"});
         }
@@ -81,10 +110,10 @@ app.post('/challenge', function (req, res) {
     }
     var challenge = new dbDef.Challenge(newChallenge);
     challenge.save(function (err, challenge) {
-        if (err){
+        if (err) {
             Log.debug("can't add challenge");
             return res.status(404).send({error: "can't add challenge"});
         }
-        return res.status(200).send({success: true});
+        return res.status(201).send({success: true});
     })
 });
