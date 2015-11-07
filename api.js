@@ -7,8 +7,8 @@ var dbDef = require('./dbDef.js'),
     http = require('http').createServer(app);
 
 //app.set('port', (process.env.PORT || 5000));
-http.listen(Config.apiPort, function () {
-    Log.info("GeoChallenger Server runs on port: " + app.get('port'))
+http.listen(Config.apiPort , function () {
+    Log.info("GeoChallenger Server runs on port: " + Config.apiPort)
 });
 
 var allowCrossDomain = function (req, res, next) {
