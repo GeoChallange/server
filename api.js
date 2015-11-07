@@ -168,15 +168,15 @@ app.post('/challenge', function (req, res) {
 /**
  *
  */
-/*
+
 app.put('/challenge/:id', function (req, res) {
     var join = req.body;
-    challenge.update({'challengeId':join.challengeId}, { $push: {join.userId.$:}}).save(function (err, challenge) {
+    challenge.update({'challengeId': req.id}, { $addToSet: {participants: [join.userId]}}).save(function (err, challenge) {
         if (err) {
             Log.debug("can't add challenge");
             return res.status(404).send({error: "can't add challenge"});
         }
-        return res.status(201).send({success: true});
+        return res.status(200);
     });
 });
-*/
+
