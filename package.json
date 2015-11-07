@@ -1,0 +1,25 @@
+{
+  "name": "geo_challenge_server",
+  "version": "0.0.1",
+  "description": "",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GeoChallenge/server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GeoChallenge/server/issues"
+  },
+  "homepage": "https://github.com/GeoChallenge/server#readme",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "colors": "^1.1.2",
+    "express": "^4.13.3",
+    "mongoose": "^4.2.4"
+  }
+}
