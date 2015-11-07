@@ -1,4 +1,5 @@
-{
+[
+  {
   "title": "Fang das Huhn",
   "price": 0,
   "challengeId": "fang_das_huhn",
@@ -247,3 +248,221 @@
     }
   ]
 }
+=======
+[
+  {
+    "title": "Fang das Huhn",
+    "price": 0,
+    "challengeId": "fang_das_huhn",
+    "startLocationDescription": "In der nähe der Stattsgalerie",
+    "startDate": "2015-11-20T15:29:12.485Z",
+    "approxDuration": "3 Stunden",
+    "minParticipants": 5,
+    "finishedBy": "",
+    "participants": [
+      "S6DFG9",
+      "9KJH79K",
+      "9TZF45G",
+      "756GFT4",
+      "0MKJOID6"
+    ],
+    "quests": [
+      {
+        "question": "Wer war der Erbauer der Oper in Stuttgart",
+        "answer": "Max Littmann",
+        "lon": 9.1860858,
+        "lat": 48.7826921
+      },
+      {
+        "question": "Wie viele Schüsseln hat das Olanetarium auf dem Dach",
+        "answer": "1",
+        "lon": 9.1895479,
+        "lat": 48.7895983
+      },
+      {
+        "question": "Was haben beide Skulpturen gemeinsam",
+        "answer": "Pferde und Menschen",
+        "lon": 9.1998631,
+        "lat": 48.8049415
+      }
+    ],
+    "pingHistory": [
+      {
+        "userId": "S6DFG9",
+        "lon": 9.1850586,
+        "lat": 48.780331,
+        "timestamp": "2015-11-20T15:29:12.485Z",
+        "nextQuestIndex": 0
+      },
+      {
+        "userId": "S6DFG9",
+        "lon": 9.1844216,
+        "lat": 48.781203,
+        "timestamp": "2015-11-20T15:34:11.485Z",
+        "nextQuestIndex": 1
+      },
+      {
+        "userId": "S6DFG9",
+        "lon": 9.1857153,
+        "lat": 48.7822856,
+        "timestamp": "2015-11-20T15:41:07.485Z",
+        "nextQuestIndex": 1
+      },
+      {
+        "userId": "S6DFG9",
+        "lon": 9.1865417,
+        "lat": 48.7835254,
+        "timestamp": "2015-11-20T15:50:47.485Z",
+        "nextQuestIndex": 2
+      },
+      {
+        "userId": "S6DFG9",
+        "lon": 9.1879585,
+        "lat": 48.7852805,
+        "timestamp": "2015-11-20T15:55:12.485Z",
+        "nextQuestIndex": 2
+      },
+      {
+        "userId": "S6DFG9",
+        "lon": 1904106,
+        "lat": 48.7881161,
+        "timestamp": "2015-11-20T16:01:19.485Z",
+        "nextQuestIndex": 2
+      },
+      {
+        "userId": "9KJH79K",
+        "lon": 9.1850583,
+        "lat": 48.780348,
+        "timestamp": "2015-11-20T15:29:12.485Z",
+        "nextQuestIndex": 0
+      },
+      {
+        "userId": "9KJH79K",
+        "lon": 9.1844240,
+        "lat": 48.781212,
+        "timestamp": "2015-11-20T15:34:11.485Z",
+        "nextQuestIndex": 1
+      },
+      {
+        "userId": "9KJH79K",
+        "lon": 9.1857110,
+        "lat": 48.7822340,
+        "timestamp": "2015-11-20T15:41:07.485Z",
+        "nextQuestIndex": 1
+      },
+      {
+        "userId": "9KJH79K",
+        "lon": 9.1865414,
+        "lat": 48.7835200,
+        "timestamp": "2015-11-20T15:50:47.485Z",
+        "nextQuestIndex": 2
+      },
+      {
+        "userId": "9KJH79K",
+        "lon": 9.1879512,
+        "lat": 48.7852839,
+        "timestamp": "2015-11-20T15:55:12.485Z",
+        "nextQuestIndex": 2
+      },
+      {
+        "userId": "9KJH79K",
+        "lon": 1904106,
+        "lat": 48.7881112,
+        "timestamp": "2015-11-20T16:01:19.485Z",
+        "nextQuestIndex": 2
+      }
+    ]
+  },
+  {
+    "title": "Erhol dich mal",
+    "price": 0,
+    "challengeId": "erhol_dich_mal",
+    "startLocationDescription": "Startup Campus Stuttgart",
+    "startDate": "2015-11-07T15:16:00.485Z",
+    "approxDuration": "1 Stunde",
+    "minParticipants": 2,
+    "finishedBy": "",
+    "participants": [
+      "S6DFG9",
+      "9KJH79K"
+    ],
+    "quests": [
+      {
+        "question": "Wie lautet die PLZ des Ortes, an dem sie sich befinden",
+        "answer": "70190",
+        "lon": 9.220012300000008,
+        "lat": 48.785783
+      },
+      {
+        "question": "In was steckt das Schwein vor dem Museum fest?",
+        "answer": "Fass",
+        "lon": 9.182932100000016,
+        "lat": 48.7758459
+      },
+      {
+        "question": "Welche Farbe hat der Porsche Schriftzug auf dem Gebäude?",
+        "answer": "Pferde und Menschen",
+        "lon": 9.221534,
+        "lat": 48.807964
+      }
+    ],
+    "pingHistory": [
+      {
+        "userId": "S6DFG9",
+        "lon": 9.212384,
+        "lat": 48.789770,
+        "timestamp": "2015-11-07T16:16:12.485Z",
+        "nextQuestIndex": 0
+      },
+      {
+        "userId": "S6DFG9",
+        "lon": 9.221511,
+        "lat": 48.788801,
+        "timestamp": "2015-11-20T16:34:11.485Z",
+        "nextQuestIndex": 1
+      },
+      {
+        "userId": "S6DFG9",
+        "lon": 9.219530,
+        "lat": 48.803646,
+        "timestamp": "2015-11-20T16:41:07.485Z",
+        "nextQuestIndex": 2
+      },
+      {
+        "userId": "S6DFG9",
+        "lon": 9.220362,
+        "lat": 48.806916,
+        "timestamp": "2015-11-20T17:00:47.485Z",
+        "nextQuestIndex": 2
+      },
+      {
+        "userId": "9KJH79K",
+        "lon": 9.211237,
+        "lat": 48.790356,
+        "timestamp": "2015-11-20T16:21:12.485Z",
+        "nextQuestIndex": 0
+      },
+      {
+        "userId": "9KJH79K",
+        "lon": 9.222325,
+        "lat": 48.789606,
+        "timestamp": "2015-11-20T16:38:11.485Z",
+        "nextQuestIndex": 1
+      },
+      {
+        "userId": "9KJH79K",
+        "lon": 9.219530,
+        "lat": 48.803646,
+        "timestamp": "2015-11-20T16:49:07.485Z",
+        "nextQuestIndex": 2
+      },
+      {
+        "userId": "9KJH79K",
+        "lon": 9.219837,
+        "lat": 48.805853,
+        "timestamp": "2015-11-20T17:01:07.485Z",
+        "nextQuestIndex": 2
+      }
+    ]
+  }
+]
