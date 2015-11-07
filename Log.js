@@ -16,20 +16,20 @@ function stringify (args) {
 exports.debug = function() {
     if (Config.debug === true) {
         for (var i = 0; i < arguments.length; i++) {
-            console.log(getTime() + (' [quatschen DEBUG] ' + stringify(arguments[i])).blue);
+            console.log(getTime() + (' [geoChallenge DEBUG] ' + stringify(arguments[i])).blue);
         }
     }
 };
 
 exports.info = function () {
     for (var i = 0; i < arguments.length; i++) {
-        console.log(getTime() + (' [quatschen] ' + stringify(arguments[i])).green);
+        console.log(getTime() + (' [geoChallenge] ' + stringify(arguments[i])).green);
     }
 };
 
 
 exports.error = function() {
     for (var i = 0; i < arguments.length; i++) {
-        console.log(getTime() + (' [quatschen ERROR] ' + stringify(arguments[i])).red);
+        console.log(getTime() + (' [geoChallenge ERROR] ' + stringify(arguments[i])).red);
     }
 };
