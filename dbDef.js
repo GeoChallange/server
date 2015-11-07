@@ -1,5 +1,4 @@
 var Db = require('mongoose'),
-    Config = require('./config.json'),
     Log = require('./Log.js'),
     challenge = Db.Schema({
     title: String,
