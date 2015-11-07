@@ -28,6 +28,7 @@ app.use(allowCrossDomain);
  * get information for all active challenges
  */
 app.get('/challenge', function (req, res) {
+    Log.debug("get challenge");
     dbDef.Challenge.aggregate([
         {
             $match: {
@@ -60,6 +61,7 @@ app.get('/challenge', function (req, res) {
  * get information for all challenges
  */
 app.get('/challenge/all', function (req, res) {
+    Log.debug("get all challenge");
     dbDef.Challenge.aggregate([{
         $project: {
             title: 1,
