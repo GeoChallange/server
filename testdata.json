@@ -2,7 +2,6 @@
   {
     "title": "Fang das Huhn",
     "price": 0,
-    "challengeId": "fang_das_huhn",
     "startLocationDescription": "In der nähe der Stattsgalerie",
     "startDate": "2015-11-20T15:29:12.485Z",
     "approxDuration": "3 Stunden",
@@ -251,12 +250,109 @@
   {
     "title": "Erhol dich mal",
     "price": 0,
-    "challengeId": "erhol_dich_mal",
     "startLocationDescription": "Startup Campus Stuttgart",
     "startDate": "2015-11-07T15:16:00.485Z",
     "approxDuration": "1 Stunde",
     "minParticipants": 2,
-    "finishedBy": "",
+    "finishedBy": "S6DFG9",
+    "participants": [
+      "S6DFG9",
+      "9KJH79K"
+    ],
+    "quests": [
+      {
+        "question": "Wie lautet die PLZ des Ortes, an dem sie sich befinden",
+        "answer": "70190",
+        "lon": 9.220012300000008,
+        "lat": 48.785783
+      },
+      {
+        "question": "In was steckt das Schwein vor dem Museum fest?",
+        "answer": "Fass",
+        "lon": 9.182932100000016,
+        "lat": 48.7758459
+      },
+      {
+        "question": "Welche Farbe hat der Porsche Schriftzug auf dem Gebäude?",
+        "answer": "Pferde und Menschen",
+        "lon": 9.221534,
+        "lat": 48.807964
+      }
+    ],
+    "pingHistory": [
+      {
+        "userId": "S6DFG9",
+        "lon": 9.212384,
+        "lat": 48.789770,
+        "timestamp": "2015-11-07T16:16:12.485Z",
+        "nextQuestIndex": 0
+      },
+      {
+        "userId": "S6DFG9",
+        "lon": 9.221511,
+        "lat": 48.788801,
+        "timestamp": "2015-11-20T16:34:11.485Z",
+        "nextQuestIndex": 1
+      },
+      {
+        "userId": "S6DFG9",
+        "lon": 9.219530,
+        "lat": 48.803646,
+        "timestamp": "2015-11-20T16:41:07.485Z",
+        "nextQuestIndex": 2
+      },
+      {
+        "userId": "S6DFG9",
+        "lon": 9.220362,
+        "lat": 48.806916,
+        "timestamp": "2015-11-20T17:00:47.485Z",
+        "nextQuestIndex": 2
+      },
+      {
+        "userId": "S6DFG9",
+        "lon": 9.2216399,
+        "lat": 48.8079287,
+        "timestamp": "2015-11-20T17:00:47.485Z",
+        "nextQuestIndex": 3
+      },
+      {
+        "userId": "9KJH79K",
+        "lon": 9.211237,
+        "lat": 48.790356,
+        "timestamp": "2015-11-20T16:21:12.485Z",
+        "nextQuestIndex": 0
+      },
+      {
+        "userId": "9KJH79K",
+        "lon": 9.222325,
+        "lat": 48.789606,
+        "timestamp": "2015-11-20T16:38:11.485Z",
+        "nextQuestIndex": 1
+      },
+      {
+        "userId": "9KJH79K",
+        "lon": 9.219530,
+        "lat": 48.803646,
+        "timestamp": "2015-11-20T16:49:07.485Z",
+        "nextQuestIndex": 2
+      },
+      {
+        "userId": "9KJH79K",
+        "lon": 9.219837,
+        "lat": 48.805853,
+        "timestamp": "2015-11-20T17:01:07.485Z",
+        "nextQuestIndex": 2
+      }
+    ]
+  },
+  {
+    "title": "Erhol dich mal",
+    "price": 0,
+    "startLocationDescription": "Startup Campus Stuttgart",
+    "startDate": "2015-11-07T15:16:00.485Z",
+    "approxDuration": "1 Stunde",
+    "minParticipants": 2,
+    "finishedBy": "9KJH79K",
     "participants": [
       "S6DFG9",
       "9KJH79K"

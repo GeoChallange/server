@@ -20,6 +20,7 @@ var allowCrossDomain = function (req, res, next) {
 app.use(bodyParser.urlencoded({
     extended: false
 }));
+app.use(bodyParser.urlencoded({ extended: true}))
 app.use(bodyParser.json());
 app.use(allowCrossDomain);
 
@@ -44,7 +45,7 @@ app.get('/challenge', function (req, res) {
                 finishedBy: 1,
                 numberOfQuests: {$size: "$quests"},
                 numberOfParticipants: {$size: "$participants"},
-                _id: 0
+                _id: 1
             }
         }], function (err, challenges) {
         if (err || challenges == null) {
@@ -71,7 +72,7 @@ app.get('/challenge/all', function (req, res) {
             finishedBy: 1,
             numberOfQuests: {$size: "$quests"},
             numberOfParticipants: {$size: "$participants"},
-            _id: 0
+            _id: 1
         }
     }], function (err, challenges) {
         if (err || challenges == null) {
@@ -86,8 +87,7 @@ app.get('/challenge/all', function (req, res) {
  * get one Challenge by challengeId
  */
 app.get('/challenge/:id', function (req, res) {
-    dbDef.Challenge.findOne({challengeId: req.params.id}).select({
-        _id: 0,
+    dbDef.Challenge.findOne({_id: req.params.id}).select({
         __v: 0,
         pingHistory: 0
     }).exec(function (err, challenge) {
@@ -104,7 +104,8 @@ app.get('/challenge/:id', function (req, res) {
  */
 app.post('/challenge', function (req, res) {
     var newChallenge = req.body;
-    if (!newChallenge.hasOwnProperty("challengeId")) {
+    console.log(newChallenge);
+    if (!newChallenge.hasOwnProperty("title")) {
         Log.debug("can't add empty challenge");
         return res.status(404).send({error: "can't add empty challenge"});
     }
