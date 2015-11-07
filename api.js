@@ -7,7 +7,7 @@ var dbDef = require('./dbDef.js'),
     http = require('http').createServer(app);
 
 app.set('port', (process.env.PORT || 5000));
-http.listen(Capp.get('port'), function () {
+http.listen(app.get('port'), function () {
     Log.info("GeoChallenger Server runs on port: " + Config.apiPort)
 });
 
