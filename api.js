@@ -171,7 +171,7 @@ app.post('/challenge', function (req, res) {
 
 app.put('/challenge/:id', function (req, res) {
     var join = req.body;
-    dbDef.Challenge.update({'challengeId': req.id}, { $addToSet: {participants: [join.userId]}},function (err, challenge) {
+    dbDef.Challenge.update({'challengeId': req.id}, { $push: {participants: join.userId}},function (err, challenge) {
         if (err) {
             Log.debug("can't add challenge");
             return res.status(404).send({error: "can't add challenge"});
