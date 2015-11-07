@@ -71,6 +71,39 @@ app.get('/challenge', function (req, res) {
 });
 
 /**
+ * get challenges by userId
+ */
+app.get('/challenge', function (req, res) {
+    dbDef.Challenge.aggregate([
+        {
+            $match: {
+                "finishedBy": null
+            }
+        }, {
+            $project: {
+                title: 1,
+                price: 1,
+                challengeId: 1,
+                startLocationDescription: 1,
+                startDate: 1,
+                approxDuration: 1,
+                minParticipants: 1,
+                finishedBy: 1,
+                numberOfQuests: {$size: "$quests"},
+                numberOfParticipants: {$size: "$participants"},
+                _id: 1
+            }
+        }], function (err, challenges) {
+        if (err || challenges == null) {
+            Log.debug("can't get challenges", err);
+            return res.status(404).send({error: "can't get challenges"});
+        }
+        return res.status(200).send(challenges);
+    });
+});
+
+
+/**
  * get information for all challenges
  */
 app.get('/challenge/all', function (req, res) {
@@ -114,12 +147,13 @@ app.get('/challenge/:id', function (req, res) {
     });
 });
 
+
+
 /**
  * add a challenge
  */
 app.post('/challenge', function (req, res) {
     var newChallenge = req.body;
-    console.log(newChallenge);
     if (!newChallenge.hasOwnProperty("title")) {
         Log.debug("can't add empty challenge");
         return res.status(404).send({error: "can't add empty challenge"});
@@ -130,6 +164,22 @@ app.post('/challenge', function (req, res) {
             Log.debug("can't add challenge");
             return res.status(404).send({error: "can't add challenge"});
         }
-        return res.status(201).send({success: true});
+        return res.status(201).send({_id: challenge._id});
     })
 });
+
+/**
+ *
+ */
+/**
+app.put('/challenge/:id', function (req, res) {
+    var join = req.body;
+    challenge.update({'challengeId':join.challengeId}, { $push: {join.userId}}  //().save(function (err, challenge) {
+        if (err) {
+            Log.debug("can't add challenge");
+            return res.status(404).send({error: "can't add challenge"});
+        }
+        return res.status(201).send({success: true});
+    });
+});
+ */

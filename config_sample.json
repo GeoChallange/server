@@ -1,7 +1,7 @@
 {
     "debug": true,
-    "apiPort": 8080,
-    "dbPort": "51334",
+    "apiPort": "process.env.PORT || 5000",
+    "db": "process.env.PORT || 5000",
     "dbHost": "ds051334.mongolab.com",
     "dbUrl": "heroku_8j1pq1nz",
     "dbUser": "mongo",
