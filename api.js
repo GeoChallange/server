@@ -21,7 +21,7 @@ var testdaten = new dbDef.Challenge({
         ]
     }
 );
-//testdaten.save();
+testdaten.save();
 
 
 http.listen(Config.apiPort, function () {
