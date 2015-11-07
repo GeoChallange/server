@@ -3,12 +3,13 @@ var dbDef = require('./dbDef.js'),
     bodyParser = require('body-parser'),
     Log = require('./Log.js'),
     Config = require('./config.json'),
+    path = require('path'),
     app = express(),
     http = require('http').createServer(app);
 
-//app.set('port', (process.env.PORT || 5000));
-http.listen(Config.apiPort , function () {
-    Log.info("GeoChallenger Server runs on port: " + Config.apiPort)
+app.set('port', (process.env.PORT || 5000));
+http.listen(Capp.get('port') , function () {
+    Log.info("GeoChallenger Server runs on port: " + app.get('port'))
 });
 
 var allowCrossDomain = function (req, res, next) {
