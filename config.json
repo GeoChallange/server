@@ -5,6 +5,7 @@
     "dbHost": "ds051334.mongolab.com",
     "dbUrl": "/heroku_8j1pq1nz",
     "dbUser": "mongo",
-    "dbPassword": "heusch"
+    "dbPassword": "heusch",
+    "dbName": "geochallenge"
 
 }
