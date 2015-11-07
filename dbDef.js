@@ -1,5 +1,6 @@
 var Db = require('mongoose'),
     Config = require('./config.json'),
+    Log = require('./Log.js'),
     challenge = Db.Schema({
     title: String,
     price: Number,
@@ -33,7 +34,9 @@ var Db = require('mongoose'),
 
 var Challenge = Db.model('Challenge', challenge);
 
-Db.connect('mongodb://' + Config.dbHost + ':' + Config.dbPort +'/geochallenge');
+Db.connect('mongodb://' + Config.dbHost + ':' + Config.dbPort +'/geochallenge', function(err) {
+    if (err) Log.error("Database connection failed", err);
+});
 
 module.exports = {
     Challenge: Challenge,
