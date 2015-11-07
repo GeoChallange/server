@@ -2,7 +2,6 @@ var dbDef = require('./dbDef.js'),
     express = require('express'),
     bodyParser = require('body-parser'),
     Log = require('./Log.js'),
-    Config = require('./config.json'),
     app = express(),
     http = require('http').createServer(app);
 
