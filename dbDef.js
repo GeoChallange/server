@@ -1,5 +1,6 @@
-var Db = require('mongoose');
-var challenge = Db.Schema({
+var Db = require('mongoose'),
+    Config = require('./config.json'),
+    challenge = Db.Schema({
     title: String,
     price: Number,
     challengeId: String,
@@ -36,7 +37,9 @@ var challenge = Db.Schema({
 });
 
 var Challenge = Db.model('Challenge', challenge);
-Db.connect('mongodb://localhost/geochallenge');
+
+Db.connect('mongodb://' + Config.dbHost + ':' + Config.dbPort +'/geochallenge');
+
 module.exports = {
     Challenge: Challenge,
     Db: Db

@@ -2,6 +2,7 @@ var dbDef = require('./dbDef.js'),
     express = require('express'),
     bodyParser = require('body-parser'),
     Log = require('./Log.js'),
+    Config = require('./config.json'),
     app = express(),
     http = require('http').createServer(app);
 
@@ -23,8 +24,8 @@ var testdaten = new dbDef.Challenge({
 //testdaten.save();
 
 
-http.listen(8080, function () {
-    Log.info("GeoChallenger Server runs")
+http.listen(Config.apiPort, function () {
+    Log.info("GeoChallenger Server runs on port: " + Config.apiPort)
 });
 
 var allowCrossDomain = function (req, res, next) {
@@ -58,7 +59,10 @@ app.get('/challenge', function (req, res) {
             _id: 0
         }
     }], function (err, challenges) {
-        if (err || challenges == null) return res.status(404).send({error: ""});
+        if (err || challenges == null){
+            Log.debug("can't get challenges", err);
+            return res.status(404).send({error: "can't get challenges"});
+        }
         return res.status(200).send(challenges);
     });
 });
@@ -71,7 +75,10 @@ app.get('/challenge/:id', function (req, res) {
         _id: 0,
         __v: 0
     }).exec(function (err, challenge) {
-        if (err || challenge != 'Object') return res.status(404).send({error: "Find challengeId error"});
+        if (err || challenge != 'Object'){
+            Log.debug("Find challengeId error");
+            return res.status(404).send({error: "Find challengeId error"});
+        }
         return res.status(200).send(challenge);
     });
 });
@@ -81,10 +88,16 @@ app.get('/challenge/:id', function (req, res) {
  */
 app.post('/challenge', function (req, res) {
     var newChallenge = req.body;
-    if(!newChallenge.hasOwnProperty("challengeId")) return res.status(404).send({error: "can't add empty challenge"});
+    if (!newChallenge.hasOwnProperty("challengeId")) {
+        Log.debug("can't add empty challenge");
+        return res.status(404).send({error: "can't add empty challenge"});
+    }
     var challenge = new dbDef.Challenge(newChallenge);
     challenge.save(function (err, challenge) {
-        if (err) return res.status(404).send({error: "can't add challenge"});
+        if (err){
+            Log.debug("can't add challenge");
+            return res.status(404).send({error: "can't add challenge"});
+        }
         return res.status(200).send({success: true});
     })
 });
