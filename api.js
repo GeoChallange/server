@@ -9,21 +9,21 @@ app.set('port', (process.env.PORT || 5000));
 http.listen(app.get('port') , function () {
     Log.info("GeoChallenger Server runs on port: " + app.get('port'))
 });
-
+/*
 var allowCrossDomain = function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
     res.header('Access-Control-Allow-Headers', 'Content-Type, Auth');
     next();
 };
-
+*/
 app.use(bodyParser.urlencoded({
     extended: false
 }));
 app.all('*', function(req, res, next){
     if (!req.get('Origin')) return next();
     res.set('Access-Control-Allow-Origin', '*');
-    res.set('Access-Control-Allow-Methods', 'PUT');
+    res.set('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
     res.set('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type');
     if ('OPTIONS' == req.method) return res.send(200);
     next();
@@ -31,7 +31,7 @@ app.all('*', function(req, res, next){
 
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
-app.use(allowCrossDomain);
+//app.use(allowCrossDomain);
 
 /**
  * get information for all active challenges
