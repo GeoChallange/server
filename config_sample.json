@@ -3,7 +3,7 @@
     "apiPort": 8080,
     "dbPort": "51334",
     "dbHost": "ds051334.mongolab.com",
-    "dbUrl": "/heroku_8j1pq1nz",
+    "dbUrl": "heroku_8j1pq1nz",
     "dbUser": "mongo",
     "dbPassword": "heusch"
 
