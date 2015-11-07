@@ -37,7 +37,7 @@ var Challenge = Db.model('Challenge', challenge);
 //Db.connect('mongodb://' + Config.dbUser + ':' + Config.dbPassword + '@' + Config.dbHost + ':' + Config.dbPort + '/' + Config.dbUrl + '/' + Config.dbName, function(err) {
 Db.connect(process.env.MONGOLAB_URI, function(err) {
     if (err) Log.error("Database connection failed", err);
-    Log.debug("DB runs");
+    console.log("DB runs");
 });
 
 module.exports = {
