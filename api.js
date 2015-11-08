@@ -166,15 +166,13 @@ app.post('/challenge', function (req, res) {
 app.put('/challenge/:id', function (req, res) {
     var join = req.body;
     Log.debug(join);
-    if (req.params.id != null) {
-        dbDef.Challenge.update({'_id': req.params.id}, {$push: {participants: join.userId}}, function (err, challenge) {
-            Log.debug(challenge);
-            if (err) {
-                Log.debug("can't add challenge");
-                return res.status(404).send({error: "can't add challenge"});
-            }
-            return res.status(200).send({success: true});
-        });
-    } else return res.status(404).send({error: "can't add challenge"});
+    dbDef.Challenge.update({'_id': req.params.id}, { $push: {participants: join.userId}}, function (err, challenge) {
+        Log.debug(challenge);
+        if (err) {
+            Log.debug("can't add challenge");
+            return res.status(404).send({error: "can't add challenge"});
+        }
+        return res.status(200).send({success: true});
+    });
 });
 
