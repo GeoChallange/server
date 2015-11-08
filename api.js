@@ -80,6 +80,7 @@ app.get('/challenge', function (req, res) {
                 approxDuration: 1,
                 minParticipants: 1,
                 finishedBy: 1,
+                winnings: 1,
                 numberOfQuests: {$size: "$quests"},
                 numberOfParticipants: {$size: "$participants"},
                 _id: 1
