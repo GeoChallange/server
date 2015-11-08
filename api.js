@@ -62,39 +62,6 @@ app.get('/challenge', function (req, res) {
     });
 });
 
-/**
- * get challenges by userId
- */
-app.get('/challenge', function (req, res) {
-    dbDef.Challenge.aggregate([
-        {
-            $match: {
-                "finishedBy": null
-            }
-        }, {
-            $project: {
-                title: 1,
-                price: 1,
-                challengeId: 1,
-                startLocationDescription: 1,
-                startDate: 1,
-                approxDuration: 1,
-                minParticipants: 1,
-                finishedBy: 1,
-                winnings: 1,
-                numberOfQuests: {$size: "$quests"},
-                numberOfParticipants: {$size: "$participants"},
-                _id: 1
-            }
-        }], function (err, challenges) {
-        if (err || challenges == null) {
-            Log.debug("can't get challenges", err);
-            return res.status(404).send({error: "can't get challenges"});
-        }
-        return res.status(200).send(challenges);
-    });
-});
-
 
 /**
  * get information for all challenges
