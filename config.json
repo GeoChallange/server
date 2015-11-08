@@ -1,8 +1,8 @@
 {
     "debug": true,
     "apiPort": 8080,
-    "dbPort": "51334",
-    "dbHost": "ds051334.mongolab.com",
+    "dbPort": 27017,
+    "dbHost": "localhost",
     "dbUrl": "heroku_8j1pq1nz",
     "dbUser": "mongo",
     "dbPassword": "heusch",
