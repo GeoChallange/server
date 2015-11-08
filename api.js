@@ -43,6 +43,7 @@ app.get('/challenge', function (req, res) {
                 title: 1,
                 price: 1,
                 challengeId: 1,
+                winnings: 1,
                 startLocationDescription: 1,
                 startDate: 1,
                 approxDuration: 1,
