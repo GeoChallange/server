@@ -9,7 +9,7 @@ app.set('port', (process.env.PORT || 5000));
 
 //http.listen(8080 , function () {
 http.listen(app.get('port') , function () {
-    Log.info("GeoChallenger Server runs on port: ")
+    Log.info("GeoChallenger Server runs on port: " + app.get('port'))
 });
 
 app.use(bodyParser.urlencoded({
@@ -73,6 +73,7 @@ app.get('/challenge/all', function (req, res) {
             title: 1,
             price: 1,
             challengeId: 1,
+            winnings: 1,
             startLocationDescription: 1,
             startDate: 1,
             approxDuration: 1,
