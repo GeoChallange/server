@@ -20,6 +20,7 @@ var allowCrossDomain = function (req, res, next) {
 app.use(bodyParser.urlencoded({
     extended: false
 }));
+/*
 app.all('*', function(req, res, next){
     if (!req.get('Origin')) return next();
     res.set('Access-Control-Allow-Origin', '*');
@@ -28,7 +29,7 @@ app.all('*', function(req, res, next){
     if ('OPTIONS' == req.method) return res.send(200);
     next();
 });
-
+*/
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
 app.use(allowCrossDomain);
