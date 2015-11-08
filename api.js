@@ -9,7 +9,7 @@ app.set('port', (process.env.PORT || 5000));
 
 //http.listen(8080 , function () {
 http.listen(app.get('port') , function () {
-    Log.info("GeoChallenger Server runs on port: " + app.get('port'))
+    Log.info("GeoChallenger Server runs on port: ")
 });
 
 app.use(bodyParser.urlencoded({
@@ -166,6 +166,7 @@ app.post('/challenge', function (req, res) {
 app.put('/challenge/:id', function (req, res) {
     var join = req.body;
     Log.debug(join);
+    console.log(req.params.id);
     dbDef.Challenge.update({'_id': req.params.id}, { $push: {participants: join.userId}}, function (err, challenge) {
         Log.debug(challenge);
         if (err) {
