@@ -108,6 +108,20 @@ app.get('/challenge/:id', function (req, res) {
     });
 });
 
+/**
+ * get one Challenge by challengeId
+ */
+app.get('/challenge/history/:id', function (req, res) {
+    dbDef.Challenge.findOne({_id: req.params.id}).select({
+        pingHistory: 1
+    }).exec(function (err, challenge) {
+        if (err) {
+            Log.debug("Find challengeId error");
+            return res.status(404).send({error: "Find challengeId error"});
+        }
+        return res.status(200).send(challenge);
+    });
+});
 
 
 /**

@@ -253,9 +253,10 @@
     "price": 0,
     "startLocationDescription": "Startup Campus Stuttgart",
     "startDate": "2015-11-07T15:16:00.485Z",
+    "winnings": "Eine Stunde Schlaf",
     "approxDuration": "1 Stunde",
     "minParticipants": 2,
-    "finishedBy": "S6DFG9",
+    "finishedBy": null,
     "participants": [
       "S6DFG9",
       "9KJH79K"
@@ -314,7 +315,7 @@
         "lon": 9.2216399,
         "lat": 48.8079287,
         "timestamp": "2015-11-20T17:00:47.485Z",
-        "nextQuestIndex": 3
+        "nextQuestIndex": 2
       },
       {
         "userId": "9KJH79K",
